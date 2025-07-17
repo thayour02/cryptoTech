@@ -54,7 +54,8 @@
     "victory-chart": "^37.3.6",
     "victory-native": "^41.17.3",
     "zeego": "^3.0.6",
-    "zustand": "^5.0.5"
+    "zustand": "^5.0.5",
+    "expo-local-authentication": "~16.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

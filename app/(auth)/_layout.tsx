@@ -11,29 +11,27 @@ const AuthLayout = () => {
             headerShown: false,
           }}
         />
-
         <Stack.Screen
           name="sign-up"
           options={{
             headerShown: false,
           }}
         />
-
         <Stack.Screen
           name="sign-email"
           options={{
             headerShown: false,
           }}
         />
-
         <Stack.Screen
           name="[verify]"
           options={{
             headerShown: false,
           }}
         />
+       
       </Stack>
-      <StatusBar backgroundColor="#161622" style="light" />
+      <StatusBar backgroundColor="light"  />
     </>
   );
 };

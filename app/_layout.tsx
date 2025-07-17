@@ -4,28 +4,22 @@ import {
   Alert,
   Text,
   StyleSheet,
-  View,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Link,
   SplashScreen,
   Stack,
-  router,
   useRouter,
-  useSegments,
 } from "expo-router";
 import "../global.css";
 import { useFonts } from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
-
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import {UserInactivity} from "../store/userInactivity";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
@@ -85,7 +79,6 @@ const RootLayout = () => {
 
 const AppNavigator = () => {
   const router = useRouter();
-  const segments = useSegments();
 
   const { isLoaded, isSignedIn } = useAuth();
 
@@ -105,6 +98,8 @@ const AppNavigator = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <GestureHandlerRootView style={styles.container}>
+        <UserInactivity>
+
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen
@@ -153,8 +148,9 @@ const AppNavigator = () => {
 
          
 
-          {/* <StatusBar  backgroundColor="#000" /> */}
+          <StatusBar  backgroundColor="light" />
         </Stack>
+        </UserInactivity>
       </GestureHandlerRootView>
     </QueryClientProvider>
   );
