@@ -1,18 +1,21 @@
-import { View, Text, TouchableOpacity,TextInput } from "react-native";
+import { View, Text, TouchableOpacity,TextInput, Image } from "react-native";
 import React from "react";
 import { BlurView } from "expo-blur";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import {router} from "expo-router"
+import { useUser } from "@clerk/clerk-expo";
 
 type Props = {};
 
 const Header = (props: Props) => {
     const { top } = useSafeAreaInsets()
+    const {user} = useUser()
   return (
     <BlurView intensity={80} tint="extraLight" style={{ paddingTop: top }}>
       <View className=" flex-row items-center justify-between gap-4 px-4 h-[60px] ">
-        <TouchableOpacity  className="bg-gray-600 w-14 h-14 items-center justify-center   rounded-full">
-             <Text className="font-psemibold text-2xl text-white">SG</Text>
+        <TouchableOpacity onPress={()=> router.push("/(crypto)/Profile")} className="bg-gray-600 w-14 h-14 items-center justify-center   rounded-full">
+             <Image source={{ uri: user?.imageUrl }} className="w-full h-full rounded-full" />
         </TouchableOpacity>
         <View className="h-14   bg-gray-200  items-center rounded-full flex-1 flex-row justify-center px-4">
             <TextInput 

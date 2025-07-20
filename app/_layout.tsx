@@ -145,10 +145,9 @@ const AppNavigator = () => {
               headerStyle: { backgroundColor: "#161622" },
             }}
           />
+          
 
-         
 
-          <StatusBar  backgroundColor="light" />
         </Stack>
         </UserInactivity>
       </GestureHandlerRootView>

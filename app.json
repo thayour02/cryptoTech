@@ -4,7 +4,7 @@
     "slug": "FinTech",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icons/download.webp",
     "scheme": "fintech",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -40,12 +40,32 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/icons/download.webp",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
       ],
+      [
+        "expo-dynamic-app-icon",
+        {
+          "default": {
+            "image": "./assets/icons/download.webp",
+            "prerendered": true 
+          },
+          "gray": {
+            "image": "./assets/icons/download.webp",
+            "prerendered": true
+          }
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+
       "expo-video",
       "expo-secure-store"
     ],

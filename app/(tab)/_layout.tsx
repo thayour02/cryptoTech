@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StatusBar } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
@@ -54,6 +54,8 @@ const TabLayout = (props: Props) => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="search" size={size} color={color} />
           ),
+          header: () => <Header />
+
         }}
       />
 
@@ -64,6 +66,8 @@ const TabLayout = (props: Props) => {
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="line-chart" size={size} color={color} />
           ),
+          header: () => <Header />
+
         }}
       />
       <Tabs.Screen
@@ -73,8 +77,11 @@ const TabLayout = (props: Props) => {
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="exchange" size={size} color={color} />
           ),
+          header: () => <Header />
+
         }}
       />
+      <StatusBar barStyle="dark-content" backgroundColor={"darkgrey"}/>
     </Tabs>
   );
 };
